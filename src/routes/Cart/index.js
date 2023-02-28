@@ -25,12 +25,25 @@ const Cart = (props) => {
             <tr>
               <td>
                 <img
-                  src={addToCart?.addcart?.image}
+                  src={
+                    addToCart?.addcart?.image
+                      ? addToCart?.addcart?.image
+                      : "Cart is Empty"
+                  }
                   style={{ width: "400px" }}
+                  title={addToCart?.addcart?.title}
                 />
               </td>
-              <td>{addToCart?.addcart?.title}</td>
-              <td>{`Price :${addToCart?.addcart?.price * count}`}</td>
+              <td>
+                {addToCart?.addcart?.title
+                  ? addToCart?.addcart?.title
+                  : "UnKown"}
+              </td>
+              <td>{`Price :${
+                addToCart?.addcart?.price * count
+                  ? addToCart?.addcart?.price * count
+                  : "NA"
+              }`}</td>
               <td>{`Quantity :${
                 count === 0 ? navigate("/ProductList") : count
               }`}</td>
@@ -62,7 +75,14 @@ const Cart = (props) => {
       </div>
       <div className="d-flex  flex-column justify-content-center align-items-center">
         <h1>Order Summery</h1>
-        <h3> {`Total Amount : Rs. ${addToCart?.addcart?.price * count}`}</h3>
+        <h3>
+          {" "}
+          {`Total Amount : Rs. ${
+            addToCart?.addcart?.price * count
+              ? addToCart?.addcart?.price * count
+              : "NA"
+          }`}
+        </h3>
       </div>
     </div>
   );
