@@ -7,6 +7,7 @@ const Cart = (props) => {
   const { addToCart } = props;
   const [count, setCount] = useState(1);
   const navigate = useNavigate();
+
   // console.log(addToCart?.image);
   return (
     <div>
